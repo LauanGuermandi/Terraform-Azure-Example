@@ -13,3 +13,11 @@ resource "azurerm_resource_group" "rg" {
     team = "devOps"
   }
 }
+
+# Create virtual network
+resource "azurerm_virtual_network" "vnet" {
+  name = "vn-terraform"
+  address_space = var.address_space
+  location = var.location
+  resource_group_name = azurerm_resource_group.rg.name
+}

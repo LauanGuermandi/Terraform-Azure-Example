@@ -1,7 +1,15 @@
-variable "resouce_group_name" {
-  default="Serverless"
+variable "location" {
+  default="eastus2"
+}
+
+variable "environment" {
+  default="production"
 }
 
 variable "subscription_id" {
   default="(token)" 
+}
+
+variable "address_space" {
+  default=["10.1.0.0/16"]
 }
