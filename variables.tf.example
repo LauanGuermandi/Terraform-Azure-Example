@@ -1,15 +1,35 @@
-variable "location" {
-  default="eastus2"
-}
-
-variable "environment" {
-  default="production"
-}
-
 variable "subscription_id" {
   default="(token)" 
 }
 
+variable "resource_prefix" {
+  default = "course"
+}
+
+variable "location" {
+  default = "eastus2"
+}
+
+variable "environment" {
+  default = "production"
+}
+
 variable "address_space" {
-  default=["10.1.0.0/16"]
+  default = ["10.1.0.0/16"]
+}
+
+variable "address_prefix" {
+  default = "10.1.1.0/24"
+}
+
+variable "vm_sku" {
+  default = "Standard_A1_v2"
+}
+
+variable "vm_username" {
+  default = "admin"
+}
+
+variable "vm_password" {
+  default = "secret123"
 }
