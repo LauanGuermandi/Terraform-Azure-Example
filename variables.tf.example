@@ -1,0 +1,7 @@
+variable "resouce_group_name" {
+  default="Serverless"
+}
+
+variable "subscription_id" {
+  default="(token)" 
+}
