@@ -6,7 +6,7 @@ provider "azurerm" {
 
 # Create resource group
 resource "azurerm_resource_group" "rg" {
-  name = "rg"
+  name = "${var.resource_prefix}-rg"
   location = var.location
   tags = {
     environment = var.environment
@@ -19,4 +19,12 @@ resource "azurerm_virtual_network" "vnet" {
   address_space = var.address_space
   location = var.location
   resource_group_name = azurerm_resource_group.rg.name
+}
+
+# Create subnet
+resource "azurerm_subnet" "subnet" {
+  name = "${var.resource_prefix}-sn"
+  resource_group_name = azurerm_resource_group.rg.name
+  virtual_network_name = azurerm_virtual_network.vnet.name
+  address_prefix = var.address_prefix
 }
